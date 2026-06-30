@@ -15,6 +15,7 @@ export interface Database {
         Row: Product;
         Insert: Omit<Product, 'id' | 'created_at' | 'updated_at'>;
         Update: Partial<Omit<Product, 'id' | 'created_at'>>;
+        imageUrl: string;
       };
       orders: {
         Row: Order;
@@ -73,6 +74,7 @@ export interface Product {
 export interface ProductWithSeller extends Product {
   profiles: Profile;
   categories: Category | null;
+  imageUrl:string;
 }
 
 export interface Order {
